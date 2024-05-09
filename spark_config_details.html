@@ -1,0 +1,786 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Bibhudutt Mohapatro">
+      
+      
+        <link rel="canonical" href="https://github.com/app-PYFRM/op_spark/spark_config_details.html">
+      
+      
+        <link rel="prev" href="spark_config.html">
+      
+      
+        <link rel="next" href="utils.html">
+      
+      
+      <link rel="icon" href="img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Configuration Details - Optimize Spark</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="assert/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spark-configurations-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Optimize Spark" class="md-header__button md-logo" aria-label="Optimize Spark" data-md-component="logo">
+      
+  <img src="img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Optimize Spark
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration Details
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Optimize Spark" class="md-nav__button md-logo" aria-label="Optimize Spark" data-md-component="logo">
+      
+  <img src="img/favicon.ico" alt="logo">
+
+    </a>
+    Optimize Spark
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Spark Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Spark Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spark_config.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spark Configurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration Details
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="spark_config_details.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Details
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Mode
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Mode
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="spark-configurations-details">Spark Configurations Details<a class="headerlink" href="#spark-configurations-details" title="Permanent link">&para;</a></h1>
+<p>Based on <a href="spark_config.html">Basic Spark Configuration Guideline</a>, we design a configuration 
+tool for development purpose.</p>
+<p>By using this tool, one does not need to specify each setting individually any more. The tool
+will provide a convenient way to allocate sufficient and optimal resource when the developer 
+provide the job size and load.</p>
+<h2 id="local-mode">Local Mode<a class="headerlink" href="#local-mode" title="Permanent link">&para;</a></h2>
+<p>For local mode, number of executor is set to be 1, as all the cores
+are on the same computer. The total core/memory used in Spark takes one third of the 
+     available cores/memory on the node. to ensure smooth process for 
+     other usess.</p>
+<p>For heavy load that involves over <span class="arithmatex"><span class="MathJax_Preview">60\%</span><script type="math/tex">60\%</script></span> of tasks in 
+    shuffling, joining, and aggregating, etc., one 
+    half of the resources will be used.
+    However, if it leads to insufficient core of memory,
+    the program will be terminated </p>
+<p>for local core, with 1 left for application master , we set driver 
+has <span class="arithmatex"><span class="MathJax_Preview">1/3</span><script type="math/tex">1/3</script></span> of the available core, and leave the 
+reamining cores to executors.</p>
+<p>For local memory, We need to get the total memory for each executor and drive before 
+setting up the Spark memory. We also need to make sure to 
+reserve <span class="arithmatex"><span class="MathJax_Preview">10\%</span><script type="math/tex">10\%</script></span> for memoryOverhead.</p>
+<p>In particular., we define total available core for the local node to be <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>,
+partition_size as <span class="arithmatex"><span class="MathJax_Preview">M_p</span><script type="math/tex">M_p</script></span>, and total memory to be <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>, then we design the resources as below.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>executor number (<span class="arithmatex"><span class="MathJax_Preview">N_e</span><script type="math/tex">N_e</script></span>)</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span></td>
+</tr>
+<tr>
+<td>core per executor (<span class="arithmatex"><span class="MathJax_Preview">C_e</span><script type="math/tex">C_e</script></span>)</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\min(zS/M_p, [N/3^2])\times [(F+1)/2]</span><script type="math/tex">\min(zS/M_p, [N/3^2])\times [(F+1)/2]</script></span></td>
+</tr>
+<tr>
+<td>driver core number (<span class="arithmatex"><span class="MathJax_Preview">C_d</span><script type="math/tex">C_d</script></span>)</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\max(1, \min([N/3] - C_e\times N_e - 1, F+1))</span><script type="math/tex">\max(1, \min([N/3] - C_e\times N_e - 1, F+1))</script></span></td>
+</tr>
+<tr>
+<td>driver memory (<span class="arithmatex"><span class="MathJax_Preview">M_d</span><script type="math/tex">M_d</script></span>)</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">ceil(\min(zS\times [\frac{F+1}{2}], M/3^2\times 0.9))</span><script type="math/tex">ceil(\min(zS\times [\frac{F+1}{2}], M/3^2\times 0.9))</script></span></td>
+</tr>
+<tr>
+<td>executor memory (<span class="arithmatex"><span class="MathJax_Preview">M_e</span><script type="math/tex">M_e</script></span>)</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">ceil(\max(1, \min(\min(r,5)\times \max(M_p, [\frac{zS}{C_e}])\times C_e[\frac{F+1}{2}]/0.4,</span><script type="math/tex">ceil(\max(1, \min(\min(r,5)\times \max(M_p, [\frac{zS}{C_e}])\times C_e[\frac{F+1}{2}]/0.4,</script></span><br><span class="arithmatex"><span class="MathJax_Preview">(M/3 - M_d/0.9)\times 0.9)))</span><script type="math/tex">(M/3 - M_d/0.9)\times 0.9)))</script></span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex"><span class="MathJax_Preview">[X]</span><script type="math/tex">[X]</script></span> is the integer part for <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>.</p>
+<h1 id="yarn-mode">Yarn Mode<a class="headerlink" href="#yarn-mode" title="Permanent link">&para;</a></h1>
+<p>For yarn mode, the design is different then local mode , scince the cluster is shared with all team members,
+    and cannot be solely used by one user, so an optimal design is much better then taking all 
+    the resources up. The design is based on file size and file load </p>
+<p>In a typical yarn cluster, it usally provides sufficient memory and cores to use.
+For a spark session, it is good practice to request optimal memory and core numbers , instead of 
+taking up as much as one can.</p>
+<p>For example, we consider a Spark task on a small data( e.g, with 256MB size)
+and the most complicated calculation for this data is summerizing statistics. if we request <span class="arithmatex"><span class="MathJax_Preview">100</span><script type="math/tex">100</script></span> cores 
+in <span class="arithmatex"><span class="MathJax_Preview">50</span><script type="math/tex">50</script></span> executors, and 2GB for each executor, we will take </p>
+<ul>
+<li>
+<p>a total of <span class="arithmatex"><span class="MathJax_Preview">150</span><script type="math/tex">150</script></span> cores: since each executor reservers <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> core for application master,
+      the total core number is <span class="arithmatex"><span class="MathJax_Preview">100 + 50 = 150</span><script type="math/tex">100 + 50 = 150</script></span></p>
+</li>
+<li>
+<p>125GB memory: the total required memory includes the reserved 300MB memory.In addition 
+       each executor will needs to reserve <span class="arithmatex"><span class="MathJax_Preview">10\%</span><script type="math/tex">10\%</script></span> of the executor memory for memory overHead,
+       so the total memory used is <span class="arithmatex"><span class="MathJax_Preview">((1+0.1)\times2GB+300MB)\times 50 =125GB</span><script type="math/tex">((1+0.1)\times2GB+300MB)\times 50 =125GB</script></span>.</p>
+<p>For such small data and simple calculate, it not only wastes a lot of resources not arhieving
+   best performance, but also may result in whats's known 
+as the "small file problem" - many small partition files, introducing an inoridinate 
+amount of disk I/O and performance degradation thanks to filesystem operations
+such as opening, closing, and listing directories, which on a distributed filsystem can be slow.</p>
+</li>
+</ul>
+<p>We do not have a <em>magic</em> schema to design the best allocation for all types of jobs.
+However, based on experience and multiple resources , we design an algorithm
+to try to use best of the resources while achieving high performance.</p>
+<ul>
+<li>
+<p><strong>Available Resources</strong></p>
+<p>In HWX server, there are a total of <span class="arithmatex"><span class="MathJax_Preview">155</span><script type="math/tex">155</script></span> nodes (i.e executors), <span class="arithmatex"><span class="MathJax_Preview">70.39</span><script type="math/tex">70.39</script></span>TB memory 
+and <span class="arithmatex"><span class="MathJax_Preview">11,780</span><script type="math/tex">11,780</script></span> cores. For the Card usage, We have an effective capacity 
+of <span class="arithmatex"><span class="MathJax_Preview">1413</span><script type="math/tex">1413</script></span> cores and <span class="arithmatex"><span class="MathJax_Preview">8.45</span><script type="math/tex">8.45</script></span>TB (i.e., <span class="arithmatex"><span class="MathJax_Preview">8649</span><script type="math/tex">8649</script></span>GB)</p>
+<p>As the clusters are shared among all team members, we need to use the resources 
+wisely, and try to request the resources within capacity with best performance.</p>
+<p>Based on these numbers, we recommend that the maximum cores for ine application
+should be within <strong><span class="arithmatex"><span class="MathJax_Preview">500</span><script type="math/tex">500</script></span></strong>, and maximum memory <span class="arithmatex"><span class="MathJax_Preview">29</span><script type="math/tex">29</script></span>GB, which is one thrid of the queue allowance.</p>
+<p>Although each cluster nodes has 78 cores, and <span class="arithmatex"><span class="MathJax_Preview">56</span><script type="math/tex">56</script></span>GB memory in average,
+to realize best perfomnce, we limit the core number for each executor to <strong>5</strong>,
+as recommended by the <em>MIT</em> team.
+And to make sure other uses can run their applications successfully,
+we further limit the executor memory to <strong><span class="arithmatex"><span class="MathJax_Preview">25</span><script type="math/tex">25</script></span>GB</strong>. Memory used more then that 
+may cause OOM issues for all the applications running on the clusters.</p>
+</li>
+</ul>
+<h3 id="driver-resources">Driver Resources<a class="headerlink" href="#driver-resources" title="Permanent link">&para;</a></h3>
+<p>We need to set up sufficient cores and memory for the driver nodes. At a high level on spark Architecture, a Spark 
+apllication consists of a driver program that is responsible for orchestrating parallel 
+operations on the spark cluster. The driver acces is distributed components in 
+the cluster-the Spark executors and cluster manager-through a <em>SparkSession</em>.
+See the figure below in <a href="https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf">Learning Spark , 2<sup>nd</sup> Edition </a>.</p>
+<p><img alt="spark_architecture" src="img/spark_architecture.png" /></p>
+<p>The 
+Spark driver has multiple roles: it communicates with the cluster manager; it requests 
+resources (CPU, memory, etc) from the cluster manager for Spark's executors
+(JVMs); and it transforms all the Spark operations into DAG computations, schedules 
+them, and distributes their execution as tasks across the Spark executors.Once the 
+resources are allocated, it communicates directly with the executors.</p>
+<p>Therefore , it is very important the driver takes abundant resources. We define 
+the job load factors based on the work load defined above:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Job Load Factor <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span></th>
+<th>Work Load</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Light(L)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Medium(M)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Heavy(H)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Medium Heavy (MH)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Extremely Heavy (XH)</td>
+</tr>
+</tbody>
+</table>
+<p>To achieve best perfomance, we allocate at least 2 cores to the driver,
+even for small jobs. However, the total core number should be within one third
+as of total core number in one cluster node (i.e., 25 cores),
+which will be served as the driver.
+We then design the driver core number <span class="arithmatex"><span class="MathJax_Preview">C_d</span><script type="math/tex">C_d</script></span> as:</p>
+<p>$$
+C_d = \min(25, \max(2, ceil(zS\times f_0/2))),
+$$
+where <span class="arithmatex"><span class="MathJax_Preview">f_0=2\log_2^{F+1}</span><script type="math/tex">f_0=2\log_2^{F+1}</script></span>;
+and driver memory <span class="arithmatex"><span class="MathJax_Preview">M_d</span><script type="math/tex">M_d</script></span> in GB as:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+M_d = \min(40, zS\times f_0)
+</div>
+<script type="math/tex; mode=display">
+M_d = \min(40, zS\times f_0)
+</script>
+</div>
+<p>in which we set the driver memory at least double of the data size ,
+multipled by the job load factor.
+Even if the data is exploded, the main operation is in clusters 
+instead of 
+the driver, so we do not need to assign the driver huge memory. We set a limit 
+of <span class="arithmatex"><span class="MathJax_Preview">40</span><script type="math/tex">40</script></span>GB to reserve sufficient memory use.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">ceil(x, t)</span><script type="math/tex">ceil(x, t)</script></span> means the number <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> will be rounded to nearest <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>.
+We round the memory by <span class="arithmatex"><span class="MathJax_Preview">8GB</span><script type="math/tex">8GB</script></span> with common practice, and round core number 
+by <span class="arithmatex"><span class="MathJax_Preview">4</span><script type="math/tex">4</script></span> so that it can be better allocated to executors.</p>
+<h3 id="total-core-number-for-executors">Total Core Number for Executors<a class="headerlink" href="#total-core-number-for-executors" title="Permanent link">&para;</a></h3>
+<p>When a data is loaded in Spark, Spark recognizes its partition numbers, and 
+allocates each partition with one core, if the cores are sufficient.If the 
+core number is greater than the partition number, the remaining cores may 
+not participate in Spark Jobs, Hence wsate the resources; if the core number 
+is smaller than the partition number, it will need to take more time to work 
+on remaining partitions.</p>
+<p>By default,
+the size of a partition in spark is 128MB, Smaller partition size may 
+lead more I/O operations and communications among cores accross multiple 
+executors (i.e cluster nodes), hence decrese 
+the work performance;while larger partition size may slow down the 
+calculation spped by individual cores. Therefore, balancing between partition
+number and size is extreamly important for Spark resource allocation.</p>
+<p>We make the following two assumptions :</p>
+<ul>
+<li>The default partition size is <span class="arithmatex"><span class="MathJax_Preview">128MB</span><script type="math/tex">128MB</script></span></li>
+<li>The maximal core we request for executors is <span class="arithmatex"><span class="MathJax_Preview">750</span><script type="math/tex">750</script></span>.</li>
+</ul>
+<p>We design the initial total core number <span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> as 
+$$
+C_1 = \min(750, z\times ceil(S) \times f_0 \times 2^3).
+$$</p>
+<h3 id="memory-allocation">Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permanent link">&para;</a></h3>
+<p>To design the executor memory, we need to firstly decide the number 
+of cores for each executor. This is consided based on job load 
+and job size.</p>
+<p>By deafult, each partition is handled by one core, and each partition takes
+<span class="arithmatex"><span class="MathJax_Preview">128</span><script type="math/tex">128</script></span>MB. From the memory layout, if an executor has only one core to work for one partition, We need to assign 
+<span class="arithmatex"><span class="MathJax_Preview">(128/0.4 + 300) = 620</span><script type="math/tex">(128/0.4 + 300) = 620</script></span>MB.
+For small josb, this may be sufficient; but for
+larger or heavier jobs, we suggest at least twice larger memory for heavy suffle
+operations</p>
+<p>More cores to the same executor will reduces communication time, and 
+it will help the executors locate closest partitions as many as possible.'
+However, due to the memory and core limit, We need to balance betwwen them.</p>
+<p>We define the partition size as <span class="arithmatex"><span class="MathJax_Preview">M_p</span><script type="math/tex">M_p</script></span> MB, and design
+the core number per executor <span class="arithmatex"><span class="MathJax_Preview">C_e</span><script type="math/tex">C_e</script></span> as:</p>
+<p>$$
+C_e = \min(F, ceil(\frac{25\times 2^{10}}{F\times M_p /0.4 + 300})).
+$$
+The maximum <span class="arithmatex"><span class="MathJax_Preview">C_e</span><script type="math/tex">C_e</script></span> is <span class="arithmatex"><span class="MathJax_Preview">\max(F)=5</span><script type="math/tex">\max(F)=5</script></span>, which is consitent with the <em>MIP</em> teams's
+recemmedation.</p>
+<p>For the total memory on each executor, defined as <span class="arithmatex"><span class="MathJax_Preview">M_e</span><script type="math/tex">M_e</script></span> in GB, we design </p>
+<p>$$
+M_e = \min(25, ceil(C_e \times \frac{\max(M_p \times f_0, zSr/C_1)}{0.4} + 330\times 2^{-10}, 1))
+$$
+In this defination, <span class="arithmatex"><span class="MathJax_Preview">zSr/C_1</span><script type="math/tex">zSr/C_1</script></span> estimates the memory each core will use for data storage,
+and <span class="arithmatex"><span class="MathJax_Preview">M_p\times F</span><script type="math/tex">M_p\times F</script></span> estimates the memory for complicated partition calculations</p>
+<h3 id="executor-number">Executor Number<a class="headerlink" href="#executor-number" title="Permanent link">&para;</a></h3>
+<p>Finally, we define the executor number <span class="arithmatex"><span class="MathJax_Preview">N_e</span><script type="math/tex">N_e</script></span>, as this is the configuratio
+parameter set in the Spark Session. Based on the 
+total core number <span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> and 
+core number per executor <span class="arithmatex"><span class="MathJax_Preview">C_e</span><script type="math/tex">C_e</script></span>, and that there is <span class="arithmatex"><span class="MathJax_Preview">155</span><script type="math/tex">155</script></span>
+total executors, we have:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+N_e = ceil(C_1 / C_e, C_e)
+</div>
+<script type="math/tex; mode=display">
+N_e = ceil(C_1 / C_e, C_e)
+</script>
+</div>
+<p>With this defination, the total core <span class="arithmatex"><span class="MathJax_Preview">C_2=N_e\times C_e</span><script type="math/tex">C_2=N_e\times C_e</script></span> we request for executors
+may be slightly more than <span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span>, since the cores need to be evenly distributed 
+across the executors. Therefore, we expect serveral spare cores by this design.</p>
+<h3 id="additional-adjustment">Additional Adjustment<a class="headerlink" href="#additional-adjustment" title="Permanent link">&para;</a></h3>
+<p>As HWX uses Yarn to manage all the resources, the actual resource allocation scheme
+may be not exactly as the same as theories listed above. By experience, we make some 
+ad-hoc adjustment to fit better to the HWX servers, so better performance can be reached.</p>
+<h2 id="total-requested-resources">Total Requested Resources<a class="headerlink" href="#total-requested-resources" title="Permanent link">&para;</a></h2>
+<p>Each executor will reserve one extra core for application master, so 
+the total core we request for the entire Spark session is </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\text{total_core} = C_d + (\tilde{C}_e + 1)\times N_e.
+</div>
+<script type="math/tex; mode=display">
+\text{total_core} = C_d + (\tilde{C}_e + 1)\times N_e.
+</script>
+</div>
+<p>The total memory calaculation is more complicated. In addition to the reserved 
+memory on each executor, the executor also reserve <span class="arithmatex"><span class="MathJax_Preview">10\%</span><script type="math/tex">10\%</script></span> of the memory for 
+memory buffer, which is callwd "memory OverHead".</p>
+<p>Nevertheless, it is very likely that
+   the cluster administrators have set some additional memory settings, so that 
+   the real memory allocation is different from what we have calculated bases on 
+   knowledge from the books.</p>
+<p>We estimate the total memory by
+   including the driver memory as </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\text(total_memory) = M_d / 0.9 + M_e / 0.9 \times N_e.
+</div>
+<script type="math/tex; mode=display">
+\text(total_memory) = M_d / 0.9 + M_e / 0.9 \times N_e.
+</script>
+</div>
+<p>However, Please note that this only an estimate. Please consult with 
+the cluster administer for actual resource allocation algorithm.</p>
+<h2 id="large-memory-use-with-data-exploration">Large Memory Use with Data Exploration<a class="headerlink" href="#large-memory-use-with-data-exploration" title="Permanent link">&para;</a></h2>
+<p>In model forecast for <strong>CCAR</strong> and <strong>CECL</strong>, it is a common practice to <em>explode</em> data, which 
+expands the data exponentially. In this situation, large memory needs to be reserved 
+to support the program running succesfully .</p>
+<p>To allocation enough resource while not talking too much, one needs a lot of experince.
+Our tool provides a function that will request sufficient resource to run the program with 
+no memory errors. However, the provided resources may not be optimal, as different
+forecast engine have different requirment, and the tool cannot provide a <em>FTT-FOR-ALL</em>
+approach.</p>
+<p>Nevertheless , one may use the tool as a strting point and tune the resources to optimal 
+based on experince.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
