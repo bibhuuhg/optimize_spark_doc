@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/app-PYFRM/op_spark/index.html</loc>
+         <loc>https://github.com/app-PYFRM/optimize_spark_doc/index.html</loc>
          <lastmod>2024-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/app-PYFRM/op_spark/resources.html</loc>
+         <loc>https://github.com/app-PYFRM/optimize_spark_doc/resources.html</loc>
          <lastmod>2024-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/app-PYFRM/op_spark/spark_config.html</loc>
+         <loc>https://github.com/app-PYFRM/optimize_spark_doc/spark_config.html</loc>
          <lastmod>2024-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/app-PYFRM/op_spark/spark_config_details.html</loc>
+         <loc>https://github.com/app-PYFRM/optimize_spark_doc/spark_config_details.html</loc>
          <lastmod>2024-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/app-PYFRM/op_spark/utils.html</loc>
+         <loc>https://github.com/app-PYFRM/optimize_spark_doc/utils.html</loc>
          <lastmod>2024-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
